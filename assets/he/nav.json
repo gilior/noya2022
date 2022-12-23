@@ -1,0 +1,20 @@
+
+{
+    "items" :[
+        { "key": "home", "value": "בית"},
+        { "key": "concerts", "value": "קונצרטים"},
+        { "key": "lectures", "value": "הרצאות"},
+        { "key": "workshops", "value": "סדנאות"},
+        { "key": "book", "value": "ספר"},
+        { "key": "bio", "value": "ביו"},
+        { "key": "videos", "value": "וידאו"},
+        { "key": "gallery", "value": "גלריה"},
+        { "key": "communities", "value": "קהילות"},
+        { "key": "news", "value": "חדשת"},
+        { "key": "contact", "value": "קשר"}
+    ]  
+}
+
+
+
+

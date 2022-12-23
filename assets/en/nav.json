@@ -1,0 +1,18 @@
+{
+    "items": [
+        { "key": "home", "value": "Home"},
+        { "key": "concerts", "value": "Concerts"},
+        { "key": "lectures", "value": "Lectures"},
+        { "key": "workshops", "value": "Workshops"},
+        { "key": "book", "value": "Book"},
+        { "key": "bio", "value": "Bio"},
+        { "key": "videos", "value": "Videos"},
+        { "key": "gallery", "value": "Gallery"},
+        { "key": "communities", "value": "Communities"},
+        { "key": "news", "value": "News"},
+        { "key": "contact", "value": "Contact"}
+    ]
+}
+   
+
+
