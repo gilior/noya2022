@@ -5,33 +5,19 @@ import Navbar from '../components/navbar';
 import { NavBarProps } from '../const';
 
 const Concerts: FC<NavBarProps> = (props) => {
-  console.log(props);
   return (
     <>
-      <Navbar {...props}   />
-
-      <Layout>
-
       <h1>Concerts page</h1>
-      </Layout>
-
     </>
   )
 };
 
-export  const getStaticProps: GetStaticProps<NavBarProps> = async ({
+export  const getStaticProps: GetStaticProps<{}> = async ({
   locale,
   locales,
 }) => {
-  // const res = await fetch(`./assets/${locale}/nav.json`)
-  const res = await fetch(`https://res.cloudinary.com/lior/raw/upload/header/en/nav.json`)
-  const menuItems = await res.json()
   return {
-    props: {
-      locale,
-      locales,
-      menuItems
-    },
+    props: {}, // will be passed to the page component as props
   }
 }
 

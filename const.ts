@@ -12,4 +12,5 @@
         locale?: string;
         locales?: string[];
         menuItems: MenuItems;
+        pageName?:string;
     }
