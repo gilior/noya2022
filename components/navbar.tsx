@@ -7,10 +7,6 @@ import styles from '../styles/Navbar.module.css'
 const Navbar: FC<NavBarProps> = (props) => {
   const items = props.menuItems.items;
   const listItems = items.map((item) =>
-    // <li>
-    //   <Link href={item.key}>{item.value}</Link>
-    // </li>
-
     <li key={item.key}>
       <Link
         href={{

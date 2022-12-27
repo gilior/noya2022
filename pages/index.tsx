@@ -3,6 +3,7 @@ import { GetStaticProps } from 'next'
 import { FC } from 'react'
 import Layout from '../components/layout'
 import Navbar from '../components/navbar'
+import Social from '../components/social'
 import { NavBarProps } from '../const'
 import Concerts from './concerts';
 import { useRouter } from 'next/router'
@@ -34,11 +35,11 @@ const Index: FC<NavBarProps> = (props) => {
     ['news',News ],
   ]);
   const router = useRouter()
-
   const Com=pagesMap.get(router.query.page?.toString()||'home');
   return (
     <>
     <Navbar {...props}></Navbar>
+  <Social></Social>
       <Layout>
       <Com {...props}></Com>
 
