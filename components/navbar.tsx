@@ -20,7 +20,7 @@ const Navbar: FC<NavBarProps> = (props) => {
   );
 
   return (
-    <ul className={styles.horizontalMenu}>{listItems}</ul>
+    <div> <ul className={styles.horizontalMenu}>{listItems}</ul></div>
   );
 };
 

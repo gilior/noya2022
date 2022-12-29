@@ -17,31 +17,31 @@ import Lectures from './lectures'
 import Book from './book'
 import Bio from './bio'
 import News from './news'
+import MenuPanel from '../components/menu-panel'
 
 const inter = Inter({ subsets: ['latin'] })
 
 const Index: FC<NavBarProps> = (props) => {
-  const pagesMap:Map<string,any>=new Map([
+  const pagesMap: Map<string, any> = new Map([
     ['concerts', Concerts],
     ['home', Home],
-    ['gallery',Gallery ],
-    ['contact',Contact ],
-    ['communities',Communities ],
-    ['workshops',Workshops ],
-    ['videos',Videos ],
-    ['lectures',Lectures ],
-    ['book',Book ],
-    ['bio',Bio ],
-    ['news',News ],
+    ['gallery', Gallery],
+    ['contact', Contact],
+    ['communities', Communities],
+    ['workshops', Workshops],
+    ['videos', Videos],
+    ['lectures', Lectures],
+    ['book', Book],
+    ['bio', Bio],
+    ['news', News],
   ]);
   const router = useRouter()
-  const Com=pagesMap.get(router.query.page?.toString()||'home');
+  const Com = pagesMap.get(router.query.page?.toString() || 'home');
   return (
     <>
-    <Navbar {...props}></Navbar>
-  <Social></Social>
+    <MenuPanel {...props}></MenuPanel> 
       <Layout>
-      <Com {...props}></Com>
+        <Com {...props}></Com>
 
 
       </Layout>
@@ -50,7 +50,7 @@ const Index: FC<NavBarProps> = (props) => {
   )
 }
 
-export  const getStaticProps: GetStaticProps<NavBarProps> = async ({
+export const getStaticProps: GetStaticProps<NavBarProps> = async ({
   locale,
   locales,
 }) => {
