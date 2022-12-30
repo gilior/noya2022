@@ -1,13 +1,14 @@
 .horizontalMenu {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     list-style: none;
   }
   
   .horizontalMenu li {
-    flex: 1;
+    /* flex: 1; */
     text-align: center;
+    /* flex-grow: 3; */
   }
   
   .horizontalMenu a {
@@ -17,5 +18,8 @@
   
   .horizontalMenunu a:hover {
     color: #555;
+  }
+  .wrapper{
+    flex-grow: 4;
   }
   

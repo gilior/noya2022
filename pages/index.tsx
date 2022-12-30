@@ -17,7 +17,7 @@ import Lectures from './lectures'
 import Book from './book'
 import Bio from './bio'
 import News from './news'
-import MenuPanel from '../components/menu-panel'
+import MenuPanel from '../components/menuPanel'
 
 const inter = Inter({ subsets: ['latin'] })
 

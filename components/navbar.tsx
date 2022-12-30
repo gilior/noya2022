@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import Link from 'next/link'
 import type { GetStaticProps, InferGetStaticPropsType } from 'next'
 import { MenuItems, Item, NavBarProps } from '../const';
-import styles from '../styles/Navbar.module.css'
+import styles from '../styles/navbar.module.css'
 
 const Navbar: FC<NavBarProps> = (props) => {
   const items = props.menuItems.items;
@@ -20,7 +20,7 @@ const Navbar: FC<NavBarProps> = (props) => {
   );
 
   return (
-    <div> <ul className={styles.horizontalMenu}>{listItems}</ul></div>
+    <div className={styles.wrapper}> <ul className={styles.horizontalMenu}>{listItems}</ul></div>
   );
 };
 
