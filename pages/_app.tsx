@@ -1,8 +1,11 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import Layout from '../components/layout'
+import React, { useEffect } from 'react';
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    document.body.style.direction=`${pageProps.locale == 'en' ? "ltr" : 'rtl'}`;
+  });
   return (
     <>
       <Component {...pageProps} />
