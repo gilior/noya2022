@@ -4,7 +4,7 @@ import { FC } from 'react'
 import Layout from '../components/layout'
 import Navbar from '../components/navbar'
 import Social from '../components/social'
-import { NavBarProps } from '../const'
+import { GeneralSiteProps } from '../const'
 import Concerts from './concerts';
 import { useRouter } from 'next/router'
 import Home from './home'
@@ -21,7 +21,7 @@ import MenuPanel from '../components/menuPanel'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const Index: FC<NavBarProps> = (props) => {
+const Index: FC<GeneralSiteProps> = (props) => {
   const pagesMap: Map<string, any> = new Map([
     ['concerts', Concerts],
     ['home', Home],
@@ -39,6 +39,7 @@ const Index: FC<NavBarProps> = (props) => {
   const Com = pagesMap.get(router.query.page?.toString() || 'home');
   return (
     <>
+
     <MenuPanel {...props}></MenuPanel> 
       <Layout>
         <Com {...props}></Com>
@@ -50,7 +51,7 @@ const Index: FC<NavBarProps> = (props) => {
   )
 }
 
-export const getStaticProps: GetStaticProps<NavBarProps> = async ({
+export const getStaticProps: GetStaticProps<GeneralSiteProps> = async ({
   locale,
   locales,
 }) => {

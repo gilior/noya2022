@@ -1,6 +1,6 @@
 
 {
-    "items" :[
+    "menuItems" :[
         { "key": "home", "value": "בית"},
         { "key": "concerts", "value": "קונצרטים"},
         { "key": "lectures", "value": "הרצאות"},
@@ -12,7 +12,8 @@
         { "key": "communities", "value": "קהילות"},
         { "key": "news", "value": "חדשת"},
         { "key": "contact", "value": "קשר"}
-    ]  
+    ],
+    "title":"נויה שליין"
 }
 
 

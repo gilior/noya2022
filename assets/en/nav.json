@@ -1,5 +1,5 @@
 {
-    "items": [
+    "menuItems": [
         { "key": "home", "value": "Home"},
         { "key": "concerts", "value": "Concerts"},
         { "key": "lectures", "value": "Lectures"},
@@ -11,7 +11,8 @@
         { "key": "communities", "value": "Communities"},
         { "key": "news", "value": "News"},
         { "key": "contact", "value": "Contact"}
-    ]
+    ],
+    "title":"Noya Schleien"
 }
    
 

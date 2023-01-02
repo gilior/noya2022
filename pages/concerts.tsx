@@ -2,9 +2,9 @@ import { GetStaticProps } from 'next';
 import React, { FC } from 'react';
 import Layout from '../components/layout';
 import Navbar from '../components/navbar';
-import { NavBarProps } from '../const';
+import { GeneralSiteProps } from '../const';
 
-const Concerts: FC<NavBarProps> = (props) => {
+const Concerts: FC<GeneralSiteProps> = (props) => {
   return (
     <>
       <h1>Concerts page</h1>

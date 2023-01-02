@@ -3,13 +3,13 @@ import { GetStaticProps } from 'next'
 import { FC } from 'react'
 import Layout from '../components/layout'
 import Navbar from '../components/navbar'
-import { NavBarProps } from '../const'
+import { GeneralSiteProps } from '../const'
 import Concerts from './concerts';
 import { useRouter } from 'next/router'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const Contact: FC<NavBarProps> = (props) => {
+const Contact: FC<GeneralSiteProps> = (props) => {
 
 
   

@@ -1,11 +1,11 @@
 import { Inter } from '@next/font/google'
 import { GetStaticProps } from 'next'
 import { FC } from 'react'
-import { NavBarProps } from '../const'
+import { GeneralSiteProps } from '../const'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const Lectures: FC<NavBarProps> = (props) => {
+const Lectures: FC<GeneralSiteProps> = (props) => {
 
 
   

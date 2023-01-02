@@ -4,13 +4,9 @@
         value: string;
     }
 
-    export interface MenuItems {
-        items: Item[];
-    }
-
-    export interface NavBarProps {
+    export interface GeneralSiteProps {
         locale?: string;
         locales?: string[];
-        menuItems: MenuItems;
+        menuItems: Item[];
         pageName?:string;
     }

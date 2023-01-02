@@ -1,15 +1,13 @@
 import React, { FC } from 'react';
 import Link from 'next/link'
-import type { GetStaticProps, InferGetStaticPropsType } from 'next'
-import { MenuItems, Item, NavBarProps } from '../const';
 import styles from '../styles/navbar.module.css'
 import { useRouter } from 'next/router'
+import { GeneralSiteProps } from '../const';
 
-const Navbar: FC<NavBarProps> = (props) => {
+const Navbar: FC<GeneralSiteProps> = (props) => {
   const router = useRouter()
   const { pathname, asPath, query } = router
-  const items = props.menuItems.items;
-  const listItems = items.map((item) =>
+  const listItems = props.menuItems.map((item) =>
     <li key={item.key}>
       <Link
         href={{
