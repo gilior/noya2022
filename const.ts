@@ -4,9 +4,17 @@
         value: string;
     }
 
+    export interface MenuItems {
+        items: Item[];
+    }
+
     export interface GeneralSiteProps {
         locale?: string;
         locales?: string[];
-        menuItems: Item[];
+        menuItems: MenuItems;
         pageName?:string;
+    }
+
+    export interface Fallback{
+       item: [string,GeneralSiteProps]
     }

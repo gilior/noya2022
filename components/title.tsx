@@ -8,15 +8,16 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faWikipediaW } from '@fortawesome/free-brands-svg-icons'
 import Script from 'next/script'
+import { GeneralSiteProps } from "../const";
 
-const Title: FC<any> = (props) => {
+const Title: FC<GeneralSiteProps> = (props) => {
 
 
 
     return (
-     <div>
-        
-     </div>
+        <div>
+
+        </div>
 
 
     )

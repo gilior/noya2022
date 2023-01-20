@@ -5,11 +5,13 @@ import { useRouter } from 'next/router'
 import { GeneralSiteProps } from '../const';
 
 const Navbar: FC<GeneralSiteProps> = (props) => {
+
   const router = useRouter()
   const { pathname, asPath, query } = router
-  const listItems = props.menuItems.map((item) =>
+  const listItems = props.menuItems.items.map((item,index) =>
     <li key={item.key}>
       <Link
+      key={index}
         href={{
           pathname: '',
           query: { page: item.key },
@@ -20,7 +22,7 @@ const Navbar: FC<GeneralSiteProps> = (props) => {
     </li>
   );
   listItems.push(
-    <Link href="javascript:void(0)"
+    <Link href="#"
       onClick={() => router.push({ pathname, query }, asPath, { locale: props.locale == 'he' ? 'en' : 'he' })
       }
     >

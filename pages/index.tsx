@@ -56,7 +56,8 @@ export const getStaticProps: GetStaticProps<GeneralSiteProps> = async ({
   locales,
 }) => {
   // const res = await fetch(`./assets/${locale}/nav.json`)
-  const res = await fetch(`https://res.cloudinary.com/lior/raw/upload/noya2022/${locale}/nav.json`)
+  console.log('locale', locale);
+  const res = await fetch(`https://res.cloudinary.com/lior/raw/upload/noya2022/${locale=='default'?'en':locale}/nav.json`)
   const menuItems = await res.json()
   return {
     props: {
