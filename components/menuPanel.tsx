@@ -3,27 +3,41 @@ import { GeneralSiteProps } from "../const"
 import Navbar from "./navbar";
 import Social from "./social";
 import styles from "../styles/menu.module.css"
-import { DesktopContainer, MobileContainer } from "../layout";
 import NavbarMobile from "./navbar.mobile";
+import styled from 'styled-components';
+import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
+import { useEffect, useState } from 'react'
 
+
+export const DesktopContainer = styled.div`
+  @media screen and (min-width: 1024px) {
+display: none !important;
+  }
+`;
+export const MobileContainer = styled.div`
+  @media screen and (max-width: 1023px) {
+display: none !important;
+  }
+`;
 const MenuPanel: FC<GeneralSiteProps> = (props) => {
-    return (
-      <>
-      <DesktopContainer>
+  const [isMobileDevice, setIsMobileDevice] = useState(false)
+  useEffect(() => setIsMobileDevice(isMobile))
 
-<div className={styles.menuPanel}>
-<Navbar {...props}></Navbar>
-  <Social></Social>
-</div>       
-</DesktopContainer>
-<MobileContainer>
-<NavbarMobile {...props}></NavbarMobile>
+  return (
+    <>
+      {!isMobileDevice &&
+        <div className={styles.menuPanel}>
+          <Navbar {...props}></Navbar>
+          <Social></Social>
+        </div>
+      }
+      {isMobileDevice &&
+        <NavbarMobile {...props}></NavbarMobile>
+      }
+    </>
 
-</MobileContainer>
-      </>
-
-      )
+  )
 }
 
 
-  export default MenuPanel;
+export default MenuPanel;

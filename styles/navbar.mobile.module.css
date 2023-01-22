@@ -77,8 +77,8 @@ section p {
   font-size: 36px;
 }
 
-.link:link,
-.link:visited {
+.item a:link,
+.item a:visited {
   display: inline-block;
   font-size: 3rem;
   font-weight: 300;
@@ -96,8 +96,8 @@ section p {
   transition: all 0.4s;
 }
 
-.link:hover,
-.link:active {
+.item a:hover,
+.item a:active {
   color: lightgreen;
   cursor: pointer;
 }
