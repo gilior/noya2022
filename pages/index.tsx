@@ -4,7 +4,7 @@ import { FC } from 'react'
 import Layout from '../components/layout'
 import Navbar from '../components/navbar'
 import Social from '../components/social'
-import { GeneralSiteProps } from '../const'
+import { enDevGeneralSiteProps, GeneralSiteProps, getPropsByLocale } from '../const'
 import Concerts from './concerts';
 import { useRouter } from 'next/router'
 import Home from './home'
@@ -40,7 +40,7 @@ const Index: FC<GeneralSiteProps> = (props) => {
   return (
     <>
 
-    <MenuPanel {...props}></MenuPanel> 
+      <MenuPanel {...props}></MenuPanel>
       <Layout>
         <Com {...props}></Com>
 
@@ -55,17 +55,31 @@ export const getStaticProps: GetStaticProps<GeneralSiteProps> = async ({
   locale,
   locales,
 }) => {
-  // const res = await fetch(`./assets/${locale}/nav.json`)
-  console.log('locale', locale);
-  const res = await fetch(`https://res.cloudinary.com/lior/raw/upload/noya2022/${locale=='default'?'en':locale}/nav.json`)
-  const menuItems = await res.json()
-  return {
-    props: {
-      locale,
-      locales,
-      menuItems
-    },
+  const env = process.env.NODE_ENV;
+  if (env == "development") {
+    const devGeneralSiteProps = getPropsByLocale(locale);
+    return {
+      props: {
+        locale,
+        locales,
+        menuItems: devGeneralSiteProps.menuItems,
+        title: devGeneralSiteProps.title,
+      },
+    }
   }
+  else {
+    const res = await fetch(`https://res.cloudinary.com/lior/raw/upload/noya2022/${locale == 'default' ? 'en' : locale}/nav.json`)
+    const items = await res.json()
+    return {
+      props: {
+        locale,
+        locales,
+        menuItems: items.menuItems,
+        title: items.title
+      },
+    }
+  }
+
 }
 
 
