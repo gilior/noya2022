@@ -11,6 +11,13 @@
     /* flex-grow: 2; */
   }
   
+  @media screen and (max-width: 1200px) {
+    .horizontalMenu li {
+      padding: 5px;
+    }
+  
+    
+  }
   .horizontalMenu a {
     text-decoration: none;
     color: #000;
