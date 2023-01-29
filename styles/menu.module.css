@@ -1,3 +1,13 @@
 .menuPanel{
     display: flex;
 }
+.top-bar{
+    background-color: rgb(32,52,108);
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.seperator{
+    
+}

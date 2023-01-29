@@ -4,6 +4,7 @@
     justify-content: space-between;
     list-style: none;
     padding: 0;
+    width: 80%;
 
   }
   
@@ -15,11 +16,12 @@
   
   .horizontalMenu a {
     text-decoration: none;
-    color: #000;
+    color: whitesmoke;
+    /* color: #000; */
   }
   
   .horizontalMenunu a:hover {
-    color: #555;
+    /* color: #555; */
   }
   .wrapper{
     flex-grow: 4;

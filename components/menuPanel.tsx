@@ -7,18 +7,8 @@ import NavbarMobile from "./navbar.mobile";
 import styled from 'styled-components';
 import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
 import { useEffect, useState } from 'react'
+import Title from "./title";
 
-
-export const DesktopContainer = styled.div`
-  @media screen and (min-width: 1024px) {
-display: none !important;
-  }
-`;
-export const MobileContainer = styled.div`
-  @media screen and (max-width: 1023px) {
-display: none !important;
-  }
-`;
 const MenuPanel: FC<GeneralSiteProps> = (props) => {
   const [isMobileDevice, setIsMobileDevice] = useState(false)
   useEffect(() => setIsMobileDevice(isMobile))
@@ -26,10 +16,17 @@ const MenuPanel: FC<GeneralSiteProps> = (props) => {
   return (
     <>
       {!isMobileDevice &&
-        <div className={styles.menuPanel}>
+      <div className={styles['top-bar']}>
+      <Title {...props}></Title>
+      <div className={styles.seperator}>
+        <hr></hr>
+      </div>
+       <div className={styles.menuPanel}>
           <Navbar {...props}></Navbar>
           <Social></Social>
         </div>
+      </div>
+       
       }
       {isMobileDevice &&
         <NavbarMobile {...props}></NavbarMobile>

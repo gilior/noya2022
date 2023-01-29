@@ -107,10 +107,8 @@ input, select {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    background-color: #00BAF0;
-    background: linear-gradient(to left, #f46b45, #eea849);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: #FFF;
+    background-color: rgb(32,52,108);
+    color: whitesmoke;
     height: 18px;
     padding: 1em;
   }
