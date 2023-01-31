@@ -6,7 +6,17 @@ const nextConfig = {
     defaultLocale: 'default',
   },
   trailingSlash: true,
-
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/lior/image/upload/**',
+      },
+    ],
+  },
 }
 
 module.exports = nextConfig

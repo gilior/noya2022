@@ -6,6 +6,7 @@ import Navbar from '../components/navbar'
 import { GeneralSiteProps } from '../const'
 import Concerts from './concerts';
 import { useRouter } from 'next/router'
+import HomeMobile from '../components/home/home.mobile'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,21 +15,19 @@ const Home: FC<GeneralSiteProps> = (props) => {
 
   
   return (
-    <>
-      <h1>Home page</h1>
-    </>
+   <HomeMobile></HomeMobile>
   )
 }
 
-export  const getStaticProps: GetStaticProps<{}> = async ({
-  locale,
-  locales,
-}) => {
-  // const res = await fetch(`./assets/${locale}/nav.json`)
-  return {
-    props: {}, // will be passed to the page component as props
-  }
-}
+// export  const getStaticProps: GetStaticProps<{}> = async ({
+//   locale,
+//   locales,
+// }) => {
+//   // const res = await fetch(`./assets/${locale}/nav.json`)
+//   return {
+//     props: {}, // will be passed to the page component as props
+//   }
+// }
 
 
 export default Home;
