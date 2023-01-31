@@ -30,20 +30,6 @@ const NavbarMobile: FC<GeneralSiteProps> = (props) => {
       </Link>
     </li>
   );
-  listItems.push(
-    <li >
-    <Link href="#"
-      onClick={() =>{ router.push({ pathname, query }, asPath, { locale: props.locale == 'he' ? 'en' : 'he' });
-     const chk=checkboxref.current;
-     chk.checked=false;
-    }
-      }
-    >
-      {props.locale == 'he' ? 'en' : 'עב'}
-    </Link>
-  
-  </li>
-  )
   return (
     <>
  <section class="top-nav">
@@ -51,7 +37,7 @@ const NavbarMobile: FC<GeneralSiteProps> = (props) => {
       {props.title}
     </div>
     <div>
-    <Social></Social>
+      <Social addLang={true} generalSiteProps={props} />
     </div>
     <input ref={checkboxref} id="menu-toggle" type="checkbox" />
     <label class="menu-button-container" for="menu-toggle">

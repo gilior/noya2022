@@ -21,14 +21,6 @@ const Navbar: FC<GeneralSiteProps> = (props) => {
       </Link>
     </li>
   );
-  listItems.push(
-    <Link href="#"
-      onClick={() => router.push({ pathname, query }, asPath, { locale: props.locale == 'he' ? 'en' : 'he' })
-      }
-    >
-      {props.locale == 'he' ? 'en' : 'עב'}
-    </Link>
-  )
   return (
     <div className={styles.wrapper}> <ul className={styles.horizontalMenu}>{listItems}</ul></div>
   );

@@ -8,13 +8,19 @@ import { faFacebook } from '@fortawesome/free-brands-svg-icons'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faWikipediaW } from '@fortawesome/free-brands-svg-icons'
 import Script from 'next/script'
+import { useRouter } from 'next/router'
+import { GeneralSiteProps } from "../const";
 
 
 
 // ...
 
+export interface SocialProps {
+    addLang: boolean;
+    generalSiteProps:GeneralSiteProps
+}
 
-const Social: FC<any> = (props) => {
+const Social: FC<SocialProps> = (props) => {
     // const items = props.menuItems.items;
     // const listItems = items.map((item) =>
     //   <li key={item.key}>
@@ -29,12 +35,24 @@ const Social: FC<any> = (props) => {
     //   </li>
     // );
 
-
+    const router = useRouter()
+    const { pathname, asPath, query } = router
     return (
         <>
             <Script src="https://kit.fontawesome.com/b58762678b.js" crossOrigin="anonymous"></Script>
             <div className={styles.wrapper}>
                 <ul className={styles.horizontalMenu}>
+                    {
+                        props.addLang &&
+                        <li>
+                             <Link href="#"
+      onClick={() => router.push({ pathname, query }, asPath, { locale: props.generalSiteProps.locale == 'he' ? 'en' : 'he' })
+      }
+    >
+      {props.generalSiteProps.locale == 'he' ? 'en' : 'עב'}
+    </Link>
+                        </li>
+                    }
                     <li>
                         <a target='_blank' href='https://www.youtube.com/user/noyaschleien'>
                             <i className="fa-brands fa-youtube"></i>
