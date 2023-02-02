@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Image from 'next/image'
 import styles from 'components/home/home.mobile.module.css'
-const HomeMobile: FC<any> = ({  }) => {
+const IntroMobile: FC<any> = ({  }) => {
   return (
     <div className={styles.main}>
          <div className={styles['image-wrap']}>
@@ -20,4 +20,4 @@ const HomeMobile: FC<any> = ({  }) => {
   )
 };
 
-export default HomeMobile;
+export default IntroMobile;

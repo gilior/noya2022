@@ -1,0 +1,9 @@
+.main{
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+
+.image-wrap{
+    position:relative;
+    height: 500px
+}

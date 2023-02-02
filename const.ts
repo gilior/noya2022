@@ -38,7 +38,8 @@ export const enDevGeneralSiteProps: GeneralSiteProps = {
             { "key": "contact", "value": "Contact" }
         ],
     },
-    title: "Noya Schleien"
+    title: "Noya Schleien",
+    
 }
 
 export const hebDevGeneralSiteProps: GeneralSiteProps = {

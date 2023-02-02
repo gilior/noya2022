@@ -14,6 +14,12 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+     // Using "baseUrl" allows you to use absolute paths
+     "baseUrl": ".",
+     // Using "paths" allows you to configure module path aliases
+     "paths": {
+       "@/components/*": ["components/*"]
+     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

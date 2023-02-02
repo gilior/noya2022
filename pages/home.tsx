@@ -7,6 +7,7 @@ import { GeneralSiteProps } from '../const'
 import Concerts from './concerts';
 import { useRouter } from 'next/router'
 import HomeMobile from '../components/home/home.mobile'
+import IntroMobile from '@/components/intro/into.mobile'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +16,11 @@ const Home: FC<GeneralSiteProps> = (props) => {
 
   
   return (
-   <HomeMobile></HomeMobile>
+    <> 
+     <HomeMobile></HomeMobile>
+   <IntroMobile></IntroMobile>
+    </>
+ 
   )
 }
 
