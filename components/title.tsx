@@ -10,8 +10,11 @@ import { faWikipediaW } from '@fortawesome/free-brands-svg-icons'
 import Script from 'next/script'
 import { GeneralSiteProps } from "../const";
 import { useRouter } from 'next/router'
+import { useTranslation } from 'next-i18next'
 
 const Title: FC<GeneralSiteProps> = (props) => {
+    const { t } = useTranslation('common')
+
     const router = useRouter()
     const { pathname, asPath, query } = router
 
@@ -19,7 +22,7 @@ const Title: FC<GeneralSiteProps> = (props) => {
     return (
         <div className={styles['title-wrapper']}>
             <div>
-            {props.title}
+            <p>{t('noya schleien')}</p>
             </div>
             <div>
             <Link href="#"

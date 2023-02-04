@@ -1,8 +1,9 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import React, { useEffect } from 'react';
+import { appWithTranslation } from 'next-i18next'
 
-export default function App({ Component, pageProps }: AppProps) {
+ const App=({ Component, pageProps }: AppProps)=> {
   useEffect(() => {
     document.body.style.direction=`${pageProps.locale == 'en' ? "ltr" : 'rtl'}`;
   });
@@ -13,3 +14,4 @@ export default function App({ Component, pageProps }: AppProps) {
 
   )
 }
+export default appWithTranslation(App)

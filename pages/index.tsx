@@ -4,7 +4,7 @@ import { FC } from 'react'
 import Layout from '../components/layout'
 import Navbar from '../components/navbar'
 import Social from '../components/social'
-import { enDevGeneralSiteProps, GeneralSiteProps, getPropsByLocale } from '../const'
+import {  generalSiteProps, GeneralSiteProps } from 'const'
 import Concerts from './concerts';
 import { useRouter } from 'next/router'
 import Home from './home'
@@ -18,6 +18,7 @@ import Book from './book'
 import Bio from './bio'
 import News from './news'
 import MenuPanel from '../components/menuPanel'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -55,30 +56,35 @@ export const getStaticProps: GetStaticProps<GeneralSiteProps> = async ({
   locale,
   locales,
 }) => {
-  const env = process.env.NODE_ENV;
-  if (env == "development") {
-    const devGeneralSiteProps = getPropsByLocale(locale);
+  //const env = process.env.NODE_ENV;
+  // if (env == "development") {
+  //   const devGeneralSiteProps = getPropsByLocale(locale);
+  //   return {
+  //     props: {
+  //       ...(await serverSideTranslations(locale ?? 'en', [
+  //         'common',
+  //       ])),
+  //       locale,
+  //       locales,
+  //       menuItems: devGeneralSiteProps.menuItems,
+  //       title: devGeneralSiteProps.title,
+  //     },
+  //   }
+  // }
+  // else {
+    // const res = await fetch(`https://res.cloudinary.com/lior/raw/upload/noya2022/${locale == 'default' ? 'en' : locale}/nav.json`)
+    // const items = await res.json()
     return {
       props: {
+        ...(await serverSideTranslations(locale ?? 'en', [
+                  'common',
+                ])),
         locale,
         locales,
-        menuItems: devGeneralSiteProps.menuItems,
-        title: devGeneralSiteProps.title,
+        menuItems: generalSiteProps.menuItems,
       },
     }
-  }
-  else {
-    const res = await fetch(`https://res.cloudinary.com/lior/raw/upload/noya2022/${locale == 'default' ? 'en' : locale}/nav.json`)
-    const items = await res.json()
-    return {
-      props: {
-        locale,
-        locales,
-        menuItems: items.menuItems,
-        title: items.title
-      },
-    }
-  }
+  // }
 
 }
 

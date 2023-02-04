@@ -18,7 +18,7 @@ const Home: FC<GeneralSiteProps> = (props) => {
   return (
     <> 
      <HomeMobile></HomeMobile>
-   <IntroMobile></IntroMobile>
+   <IntroMobile {...props}></IntroMobile>
     </>
  
   )

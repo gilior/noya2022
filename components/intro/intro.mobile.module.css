@@ -3,7 +3,11 @@
     /* flex-direction: column; */
 }
 
-.image-wrap{
-    position: 'relative';
-    height: '500px'
+.intro-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10%;
+    padding-bottom: 10%;
 }
