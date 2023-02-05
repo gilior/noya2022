@@ -4,7 +4,7 @@ import { FC } from 'react'
 import Layout from '../components/layout'
 import Navbar from '../components/navbar'
 import Social from '../components/social'
-import {  generalSiteProps, GeneralSiteProps } from 'const'
+import { generalSiteProps, GeneralSiteProps, YOUTUBE_PLAYLIST_ITEMS_API } from 'const'
 import Concerts from './concerts';
 import { useRouter } from 'next/router'
 import Home from './home'
@@ -23,6 +23,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 const inter = Inter({ subsets: ['latin'] })
 
 const Index: FC<GeneralSiteProps> = (props) => {
+  console.log(props.youtubeObj);
+  
   const pagesMap: Map<string, any> = new Map([
     ['concerts', Concerts],
     ['home', Home],
@@ -72,18 +74,24 @@ export const getStaticProps: GetStaticProps<GeneralSiteProps> = async ({
   //   }
   // }
   // else {
-    // const res = await fetch(`https://res.cloudinary.com/lior/raw/upload/noya2022/${locale == 'default' ? 'en' : locale}/nav.json`)
-    // const items = await res.json()
-    return {
-      props: {
-        ...(await serverSideTranslations(locale ?? 'en', [
-                  'common',
-                ])),
-        locale,
-        locales,
-        menuItems: generalSiteProps.menuItems,
-      },
-    }
+  // const res = await fetch(`https://res.cloudinary.com/lior/raw/upload/noya2022/${locale == 'default' ? 'en' : locale}/nav.json`)
+  // const items = await res.json()
+  const res = await fetch(`${YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=PLPoSXtKy5db8jSWp29zRQbPuYYGbNsEbG&key=${process.env.YOUTUBE_API_KEY}`)
+  const data = await res.json();
+
+  console.log(data);
+
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en', [
+        'common',
+      ])),
+      locale,
+      locales,
+      menuItems: generalSiteProps.menuItems,
+      youtubeObj:data
+    },
+  }
   // }
 
 }
