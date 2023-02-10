@@ -23,7 +23,7 @@ const MenuPanel: FC<GeneralSiteProps> = (props) => {
       </div>
        <div className={styles.menuPanel}>
           <Navbar {...props}></Navbar>
-          <Social></Social>
+          <Social addLang={true} generalSiteProps={props}></Social>
         </div>
       </div>
        

@@ -9,6 +9,7 @@ import { useRouter } from 'next/router'
 import HomeMobile from '../components/home/home.mobile'
 import IntroMobile from 'components/intro/into.mobile'
 import LittleGirlMobile from 'components/littleGirl/littleGirl.mobile'
+import VideoMobile from '@/components/video/video.mobile'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,6 +22,7 @@ const Home: FC<GeneralSiteProps> = (props) => {
      <HomeMobile></HomeMobile>
    <IntroMobile {...props}></IntroMobile>
    <LittleGirlMobile {...props}></LittleGirlMobile>
+   <VideoMobile  {...props}></VideoMobile>
     </>
  
   )
