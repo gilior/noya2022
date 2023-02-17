@@ -16,7 +16,7 @@ import { Pagination, Navigation } from "swiper";
 // import { Carousel } from "react-responsive-carousel";
 // import ReactPlayer from 'react-player';
 // import "node_modules/react-responsive-carousel/lib/styles/carousel.min.css"
-
+import styles from "./video.mobile.module.css";
 // import { div, Center, Heading, SimpleGrid } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/button';
 import Head from "next/head"
@@ -34,14 +34,17 @@ const VideoMobile: FC<GeneralSiteProps> = (props) => {
         <meta name="description" content="A YouTube video player that uses ISG" />
         <link rel="icon" href="/favicon.ico" />
       </Head> */}
-            <div >
-               {playing&& <div>
-                    <div onClick={()=>setPlaying(false)}>
+            <div className={styles['video-wrap']}>
+               {playing&& 
+               <>   
+               <div className={styles['close-video']} onClick={()=>setPlaying(false)}>
                         X
                     </div>
                     <YoutubeVideoPlayer id={currentVideo?.snippet.resourceId.videoId || ''} playing={playing} />
-                </div>}
-                {!playing &&<div>
+
+               </>
+                                    }
+                {!playing &&
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={2}
@@ -51,12 +54,12 @@ const VideoMobile: FC<GeneralSiteProps> = (props) => {
                         }}
                         navigation={true}
                         modules={[Pagination, Navigation]}
-                        className="mySwiper"
+                        className={styles['my-swiper']}
                     >
                         {
                             props.youtubeObj?.items.map((video) => {
                                 return (
-                                    <SwiperSlide style={{background:'black'}}>
+                                    <SwiperSlide className={styles['Swiper-slide']}>
                                         <Button onClick={() => { setCurrentVideo(video); setPlaying(true) }}>
                                             <Image alt="" src={video.snippet.thumbnails.medium.url} width={video.snippet.thumbnails.high.width} height={video.snippet.thumbnails.high.height} />
                                         </Button>
@@ -66,8 +69,7 @@ const VideoMobile: FC<GeneralSiteProps> = (props) => {
                         }
 
                     </Swiper>
-                    );
-                </div>}
+                }
             </div>
         </>
     )

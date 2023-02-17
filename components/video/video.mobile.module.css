@@ -1,5 +1,17 @@
 .video-wrap{
-    position:relative;
-    height: 500px
-    
+background: black;    
+height: 250px;
+
+}
+.close-video{
+    color: whitesmoke;
+}
+
+.swiper-slide{
+    /* min-height: 250px; */
+    background: black;
+}
+.my-swiper{
+    height: 250px;
+    background: black;
 }
