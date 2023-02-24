@@ -38,7 +38,7 @@ const VideoMobile: FC<GeneralSiteProps> = (props) => {
                {playing&& 
                <>   
                <div className={styles['close-video']} onClick={()=>setPlaying(false)}>
-                        X
+               &#10006;
                     </div>
                     <YoutubeVideoPlayer id={currentVideo?.snippet.resourceId.videoId || ''} playing={playing} />
 
@@ -59,9 +59,10 @@ const VideoMobile: FC<GeneralSiteProps> = (props) => {
                         {
                             props.youtubeObj?.items.map((video) => {
                                 return (
-                                    <SwiperSlide className={styles['Swiper-slide']}>
+                                    <SwiperSlide className={styles['swiper-slide']}>
                                         <Button onClick={() => { setCurrentVideo(video); setPlaying(true) }}>
                                             <Image alt="" src={video.snippet.thumbnails.medium.url} width={video.snippet.thumbnails.high.width} height={video.snippet.thumbnails.high.height} />
+                                            <Image className={styles['image2']} alt="" src="/play_yt.svg" width={video.snippet.thumbnails.high.width} height={video.snippet.thumbnails.high.height} />
                                         </Button>
                                     </SwiperSlide>
                                 )

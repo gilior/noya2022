@@ -5,6 +5,8 @@ height: 250px;
 }
 .close-video{
     color: whitesmoke;
+    padding: 20px;
+    font-size: 30px;
 }
 
 .swiper-slide{
@@ -15,3 +17,9 @@ height: 250px;
     height: 250px;
     background: black;
 }
+
+.image2 {
+    position: absolute;
+   width: 80px;
+   height: 80px;
+  }
