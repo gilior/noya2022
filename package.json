@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "bundle-audioPlayer": "vite build && node util/process-audioPlayer-bundle"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.4.9",
@@ -28,6 +29,8 @@
     "linkify-html": "^4.1.0",
     "linkify-react": "^4.1.0",
     "linkifyjs": "^4.1.0",
+    "lottie-react": "^2.4.0",
+    "lottie-web": "^5.10.2",
     "next": "13.0.7",
     "next-i18next": "^13.1.4",
     "react": "18.2.0",
@@ -40,9 +43,11 @@
     "swiper": "^9.0.4",
     "swr": "^2.0.0",
     "typescript": "4.9.4",
+    "vite": "^4.1.4",
     "yet-another-react-lightbox": "^2.3.1"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.26"
+    "@types/styled-components": "^5.1.26",
+    "sass": "^1.58.3"
   }
 }
