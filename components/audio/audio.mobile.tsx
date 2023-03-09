@@ -12,6 +12,7 @@ import "swiper/css/pagination";
 import { Pagination, Navigation } from "swiper";
 //import lottieWeb from "lottie-react";
 import lottieWeb from 'lottie-web';
+import ocean from '../../public/ocean.jpg'
 
 // import Lightdiv from "yet-another-react-lightdiv";
 // import styles from "./video.mobile.module.css";
@@ -22,12 +23,15 @@ import styles from "./audio.mobile.module.css";
 // import { div, Center, Heading, SimpleGrid } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/button';
 import Head from "next/head"
-import ocean from '../../public/2.jpg'
 import { audioPlayerPath } from "../../util/audioPlayer-bundle-info";
 import Script from "next/script";
+import { useTranslation } from 'next-i18next'
+
 //import lottieWeb from 'https://cdn.skypack.dev/lottie-web';
 const AudioMobile: FC<GeneralSiteProps> = (props) => {
     /* Implementation of the presentation of the audio player */
+    const { t } = useTranslation('common')
+
  useEffect(() => {
     const playIconContainer = document.getElementById('play-icon');
     const audioPlayerContainer = document.getElementById('audio-player-container');
@@ -244,21 +248,28 @@ const AudioMobile: FC<GeneralSiteProps> = (props) => {
    
     return (
         <div class="audio-wrap">
+                     <div className={styles['image-wrap']}>
+                     <Image
+        alt="Mountains"
+        src={ocean}
+       fill
+
+      />
+                     </div>
+
 
             <div id="audio-player-container">
-                <audio src="https://assets.codepen.io/4358584/Anitek_-_Komorebi.mp3" preload="metadata" loop></audio>
-                <p>audio player ish</p>
+                <audio src="/piazola.mp3" preload="metadata" loop></audio>
+                <p>{t('astorPiazzolla')}</p>
                 <button id="play-icon"></button>
                 <span id="current-time" class="time">0:00</span>
-                <input type="range" id="seek-slider" max="100" value="0"></input>
+                <input type="range" id="seek-slider" max="100" defaultValue="0"></input>
                 <span id="duration" class="time">0:00</span>
                 <output id="volume-output">100</output>
-                <input type="range" id="volume-slider" max="100" value="100"></input>
+                <input type="range" id="volume-slider" max="100" defaultValue="100"></input>
                 <button id="mute-icon"></button>
             </div>
         </div>
-
-
     )
 }
 

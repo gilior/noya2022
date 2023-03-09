@@ -47,6 +47,7 @@
     "yet-another-react-lightbox": "^2.3.1"
   },
   "devDependencies": {
+    "@simbathesailor/use-what-changed": "^2.0.0",
     "@types/styled-components": "^5.1.26",
     "sass": "^1.58.3"
   }
