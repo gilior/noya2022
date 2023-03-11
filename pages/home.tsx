@@ -11,6 +11,7 @@ import IntroMobile from 'components/intro/into.mobile'
 import LittleGirlMobile from 'components/littleGirl/littleGirl.mobile'
 import VideoMobile from 'components/video/video.mobile'
 import AudioMobile from 'components/audio/audio.mobile'
+import ConcertsMobile from 'components/concerts/concerts.mobile'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,6 +26,8 @@ const Home: FC<GeneralSiteProps> = (props) => {
    <LittleGirlMobile {...props}></LittleGirlMobile>
    <VideoMobile  {...props}></VideoMobile>
    <AudioMobile  {...props}></AudioMobile>
+   <ConcertsMobile  {...props}></ConcertsMobile>
+
     </>
  
   )
