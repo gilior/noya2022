@@ -10,6 +10,7 @@ import "swiper/css/scrollbar";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Pagination, Navigation } from "swiper";
+import play_yt from '../../public/play_yt.svg'
 
 // import Lightdiv from "yet-another-react-lightdiv";
 // import styles from "./video.mobile.module.css";
@@ -62,7 +63,7 @@ const VideoMobile: FC<GeneralSiteProps> = (props) => {
                                     <SwiperSlide className={styles['swiper-slide']}>
                                         <Button onClick={() => { setCurrentVideo(video); setPlaying(true) }}>
                                             <Image alt="" src={video.snippet.thumbnails.medium.url} width={video.snippet.thumbnails.high.width} height={video.snippet.thumbnails.high.height} />
-                                            <Image className={styles['image2']} alt="" src="/play_yt.svg" width={video.snippet.thumbnails.high.width} height={video.snippet.thumbnails.high.height} />
+                                            <Image className={styles['play-button']} alt="" src={play_yt}  />
                                         </Button>
                                     </SwiperSlide>
                                 )
