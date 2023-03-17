@@ -18,6 +18,7 @@ import crash from '../public/crash.jpeg'
 import book from '../public/book.jpg'
 import workshops from '../public/workshops.jpg'
 import HomeCardMobile from 'components/home_card/home.card'
+import ContactMobile from 'components/contact/contact.mobile'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -36,6 +37,7 @@ const Home: FC<GeneralSiteProps> = (props) => {
    <HomeCardMobile description='home_lectures' generalSiteProps={props} img={lecture} link='lectures' title='lectures'></HomeCardMobile>
    <HomeCardMobile description='home_workshops' generalSiteProps={props} img={workshops} link='workshops' title='workshops'></HomeCardMobile>
    <HomeCardMobile description='home_book' generalSiteProps={props} img={book} link='book' title='book'></HomeCardMobile>
+   <ContactMobile {...props}></ContactMobile>
     </>
  
   )
