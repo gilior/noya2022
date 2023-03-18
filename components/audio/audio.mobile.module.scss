@@ -25,7 +25,7 @@
         height: 132px;
         background: #fff;
     }
-    #audio-player-container::before {
+    .audioPlayerContainer::before {
         position: absolute;
         content: '';
         width: calc(100% + 4px);
@@ -44,7 +44,7 @@
         font-size: 28px;
         background: #fff;
     }
-    #play-icon {
+    .playIcon {
         margin: 20px 2.5% 10px 2.5%;
     }
     .time {
@@ -64,23 +64,23 @@
         float: left;
         clear: left;
     }
-    #volume-slider {
+    .volumeSlider {
         margin: 10px 2.5%;
         width: 58%;
     }
-    #volume-slider::-webkit-slider-runnable-track {
+    .volumeSlider::-webkit-slider-runnable-track {
         background: rgba(0, 125, 181, 0.6);
     }
-    #volume-slider::-moz-range-track {
+    .volumeSlider::-moz-range-track {
         background: rgba(0, 125, 181, 0.6);
     }
-    #volume-slider::-ms-fill-upper {
+    .volumeSlider::-ms-fill-upper {
         background: rgba(0, 125, 181, 0.6);
     }
-    #volume-slider::before {
+    .volumeSlider::before {
         width: var(--volume-before-width);
     }
-    #mute-icon {
+    .muteIcon {
         margin: 0 2.5%;
     }
     .input[type="range"] {

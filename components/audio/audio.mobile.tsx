@@ -36,7 +36,7 @@ const AudioMobile: FC<GeneralSiteProps> = (props) => {
     const playIconContainer = document.getElementById('playIcon');
     const audioPlayerContainer = document.getElementById('audioPlayerContainer');
     const seekSlider = document.getElementById('seek-slider') as HTMLInputElement;
-    const volumeSlider = document.getElementById('volume-slider');
+    const volumeSlider = document.getElementById('volumeSlider');
     const muteIconContainer = document.getElementById('muteIcon');
     let playState = 'play';
     let muteState = 'unmute';
@@ -266,7 +266,7 @@ const AudioMobile: FC<GeneralSiteProps> = (props) => {
                 <input className={styles['input']} type="range" id="seek-slider" max="100" defaultValue="0"></input>
                 <span id="duration" className={styles['time']}>0:00</span>
                 <output className={styles['output']} id="volume-output">100</output>
-                <input className={styles['input']} type="range" id="volume-slider" max="100" defaultValue="100"></input>
+                <input className={styles['input'] styles['']} type="range" id="volumeSlider" max="100" defaultValue="100"></input>
                 <button className={styles['muteIcon']} id="muteIcon"></button>
             </div>
         </div>
