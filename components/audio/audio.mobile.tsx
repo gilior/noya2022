@@ -19,7 +19,7 @@ import ocean from '../../public/ocean.jpg'
 // import { Carousel } from "react-responsive-carousel";
 // import ReactPlayer from 'react-player';
 // import "node_modules/react-responsive-carousel/lib/styles/carousel.min.css"
-import styles from "./audio.mobile.module.css";
+import styles from "./audio.mobile.module.scss";
 // import { div, Center, Heading, SimpleGrid } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/button';
 import Head from "next/head"
@@ -33,11 +33,11 @@ const AudioMobile: FC<GeneralSiteProps> = (props) => {
     const { t } = useTranslation('common')
 
  useEffect(() => {
-    const playIconContainer = document.getElementById('play-icon');
-    const audioPlayerContainer = document.getElementById('audio-player-container');
+    const playIconContainer = document.getElementById('playIcon');
+    const audioPlayerContainer = document.getElementById('audioPlayerContainer');
     const seekSlider = document.getElementById('seek-slider') as HTMLInputElement;
     const volumeSlider = document.getElementById('volume-slider');
-    const muteIconContainer = document.getElementById('mute-icon');
+    const muteIconContainer = document.getElementById('muteIcon');
     let playState = 'play';
     let muteState = 'unmute';
 
@@ -247,7 +247,7 @@ const AudioMobile: FC<GeneralSiteProps> = (props) => {
  }, []);
    
     return (
-        <div class="audio-wrap">
+        <div className={styles['audio-wrap']}>
                      <div className={styles['image-wrap']}>
                      <Image
         alt="Mountains"
@@ -258,16 +258,16 @@ const AudioMobile: FC<GeneralSiteProps> = (props) => {
                      </div>
 
 
-            <div id="audio-player-container">
+            <div className={styles['audioPlayerContainer']} id="audioPlayerContainer">
                 <audio src="/piazola.mp3" preload="metadata" loop></audio>
-                <p>{t('astorPiazzolla')}</p>
-                <button id="play-icon"></button>
-                <span id="current-time" class="time">0:00</span>
-                <input type="range" id="seek-slider" max="100" defaultValue="0"></input>
-                <span id="duration" class="time">0:00</span>
-                <output id="volume-output">100</output>
-                <input type="range" id="volume-slider" max="100" defaultValue="100"></input>
-                <button id="mute-icon"></button>
+                <p className={styles['p']}>{t('astorPiazzolla')}</p>
+                <button className={styles['playIcon']} id="playIcon"></button>
+                <span id="current-time" className={styles['time']}>0:00</span>
+                <input className={styles['input']} type="range" id="seek-slider" max="100" defaultValue="0"></input>
+                <span id="duration" className={styles['time']}>0:00</span>
+                <output className={styles['output']} id="volume-output">100</output>
+                <input className={styles['input']} type="range" id="volume-slider" max="100" defaultValue="100"></input>
+                <button className={styles['muteIcon']} id="muteIcon"></button>
             </div>
         </div>
     )
