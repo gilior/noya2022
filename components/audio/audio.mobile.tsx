@@ -12,8 +12,8 @@ import "swiper/css/pagination";
 import { Pagination, Navigation } from "swiper";
 //import lottieWeb from "lottie-react";
 import lottieWeb from 'lottie-web';
-import ocean from '../../public/ocean.jpg'
-
+import ocean from '../../public/ocean.jpg';
+import { clsx } from 'clsx';
 // import Lightdiv from "yet-another-react-lightdiv";
 // import styles from "./video.mobile.module.css";
 // import { Carousel } from "react-responsive-carousel";
@@ -266,7 +266,7 @@ const AudioMobile: FC<GeneralSiteProps> = (props) => {
                 <input className={styles['input']} type="range" id="seek-slider" max="100" defaultValue="0"></input>
                 <span id="duration" className={styles['time']}>0:00</span>
                 <output className={styles['output']} id="volume-output">100</output>
-                <input className={styles['input'] styles['']} type="range" id="volumeSlider" max="100" defaultValue="100"></input>
+                <input className={clsx(styles['input'],'volumeSlider')} type="range" id="volumeSlider" max="100" defaultValue="100"></input>
                 <button className={styles['muteIcon']} id="muteIcon"></button>
             </div>
         </div>
