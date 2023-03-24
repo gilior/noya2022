@@ -5,43 +5,41 @@ import LinkComponent from 'components/link/link'
 import crash from '../../public/crash.jpeg'
 import { GeneralSiteProps } from 'const';
 import { useTranslation } from 'next-i18next';
+import { BrowserDetails } from './contact.const';
 
 const ContactMobile: FC<GeneralSiteProps> = (props) => {
     const { t } = useTranslation('common')
-    const handleSubmit = async (event) => {
+    function getBrowserDetails(): BrowserDetails {
+      let platform = navigator?.userAgentData?.platform || navigator?.platform || 'unknown';
+
+      const { userAgent, appName, appVersion, language } = navigator;
+      return {
+        userAgent,
+        appName,
+        appVersion,
+        platform,
+        language,
+      };
+    }
+    
+    const handleSubmit = async (e) => {
         // Stop the form from submitting and refreshing the page.
-        event.preventDefault()
+        e.preventDefault();
+
+        try {
+          const response = await fetch('/api/sendEmail', {
+            method: 'POST',
+            body: JSON.stringify({msg: e.target.msg.value }),
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          });
     
-        // Get data from the form.
-        const data = {
-            msg: event.target.msg.value,
+          const data = await response.json();
+          console.log(data.message);
+        } catch (error) {
+          console.error(error);
         }
-    
-        // Send the data to the server in JSON format.
-        const JSONdata = JSON.stringify(data)
-    
-        // API endpoint where we send form data.
-        const endpoint = '/api/form'
-    
-        // Form the request for sending data to the server.
-        const options = {
-          // The method is POST because we are sending data.
-          method: 'POST',
-          // Tell the server we're sending JSON.
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          // Body of the request is the JSON data we created above.
-          body: JSONdata,
-        }
-    
-        // Send the form data to our forms API on Vercel and get a response.
-        const response = await fetch(endpoint, options)
-    
-        // Get the response data from server as JSON.
-        // If server returns the name submitted, that means the form works.
-        const result = await response.json()
-        alert(`Is this your full name: ${result.data}`)
       }
     
     return (
