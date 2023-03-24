@@ -266,7 +266,7 @@ const AudioMobile: FC<GeneralSiteProps> = (props) => {
                 <input className={styles['input']} type="range" id="seek-slider" max="100" defaultValue="0"></input>
                 <span id="duration" className={styles['time']}>0:00</span>
                 <output className={styles['output']} id="volume-output">100</output>
-                <input className={clsx(styles['input'],'volumeSlider')} type="range" id="volumeSlider" max="100" defaultValue="100"></input>
+                <input className={clsx(styles['volumeSlider'],styles['input'])} type="range" id="volumeSlider" max="100" defaultValue="100"></input>
                 <button className={styles['muteIcon']} id="muteIcon"></button>
             </div>
         </div>
