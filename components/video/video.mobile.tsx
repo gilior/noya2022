@@ -61,8 +61,8 @@ const VideoMobile: FC<GeneralSiteProps> = (props) => {
                             props.youtubeObj?.items.map((video) => {
                                 return (
                                     <SwiperSlide className={styles['swiper-slide']}>
-                                        <Button onClick={() => { setCurrentVideo(video); setPlaying(true) }}>
-                                            <Image alt="" src={video.snippet.thumbnails.medium.url} width={video.snippet.thumbnails.high.width} height={video.snippet.thumbnails.high.height} />
+                                        <Button className={styles['youtube-image-wrap']} onClick={() => { setCurrentVideo(video); setPlaying(true) }}>
+                                            <Image fill={true} alt="" src={video.snippet.thumbnails.medium.url} />
                                             <Image className={styles['play-button']} alt="" src={play_yt}  />
                                         </Button>
                                     </SwiperSlide>
