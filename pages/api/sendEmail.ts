@@ -3,14 +3,14 @@ import sgMail from '@sendgrid/mail';
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default async function handler(req, res) {
-  const {  msg } = req.body;
+  const {  msg,ip,time,timeZone } = req.body;
 
   const message = {
     to: 'liorgish@gmail.com',
     from: 'liorgish@gmail.com',
     subject: `New message from your website`,
-    text: msg,
-    html: `<p>${msg}</p>`,
+    text: `${msg}\n${ip}\n${time}\n${timeZone}`,
+    html: `<p>${msg}<br>${ip}<br>${time}<br>${timeZone}</p>`,
   };
 
   try {
