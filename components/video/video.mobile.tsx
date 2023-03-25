@@ -5,10 +5,10 @@ import Image from "next/image";
 import { FC, useRef, useState } from "react";
 import { GeneralSiteProps, YoutubeItem } from "const";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/scrollbar";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+// import "swiper/css";
+// import "swiper/css/scrollbar";
+// import "swiper/css/navigation";
+// import "swiper/css/pagination";
 import { Pagination, Navigation } from "swiper";
 import play_yt from '../../public/play_yt.svg'
 
@@ -26,6 +26,7 @@ const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 const VideoMobile: FC<GeneralSiteProps> = (props) => {
+    console.log('props.locale',props.locale);
     const [currentVideo, setCurrentVideo] = useState(props.youtubeObj?.items[0]);
     const [playing, setPlaying] = useState(false);
     return (
@@ -47,6 +48,8 @@ const VideoMobile: FC<GeneralSiteProps> = (props) => {
                                     }
                 {!playing &&
                     <Swiper
+                        key={`${props.locale}-swiper}`}
+                        dir={props.locale == 'en' ? "ltr" : 'rtl'}
                         slidesPerView={1}
                         spaceBetween={2}
                         loop={true}
@@ -60,7 +63,7 @@ const VideoMobile: FC<GeneralSiteProps> = (props) => {
                         {
                             props.youtubeObj?.items.map((video) => {
                                 return (
-                                    <SwiperSlide className={styles['swiper-slide']}>
+                                    <SwiperSlide key={video.id} className={styles['swiper-slide']}>
                                         <Button className={styles['youtube-image-wrap']} onClick={() => { setCurrentVideo(video); setPlaying(true) }}>
                                             <Image fill={true} alt="" src={video.snippet.thumbnails.medium.url} />
                                             <Image className={styles['play-button']} alt="" src={play_yt}  />
