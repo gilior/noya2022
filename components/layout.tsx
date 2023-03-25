@@ -3,7 +3,7 @@ import styles from '../styles/Home.module.css'
 import Head from 'next/head'
 
 import Navbar from './navbar'
-import Footer from './footer'
+import Footer from './footer/footer'
 const Layout: FC<any> = ({ children }) => {
   return (
     <>
