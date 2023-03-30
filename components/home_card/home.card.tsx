@@ -7,7 +7,7 @@ import { useTranslation } from 'next-i18next';
 
 export type HomeCardMobileProps = {
     generalSiteProps:GeneralSiteProps;
-    img:StaticImageData;
+    img?:StaticImageData;
     title:string;
     description:string;
     link?:string;
@@ -22,13 +22,13 @@ const HomeCardMobile: FC<HomeCardMobileProps> = (props) => {
              <div>
             {t(props.description)}
             </div>
-            <div className={styles['image-wrap']}>
+          { props.img && <div className={styles['image-wrap']}>
                 <Image
                     alt="Mountains"
                     src={props.img}
                     fill
                 />
-            </div>
+            </div>}
            
            { props.link &&  <LinkComponent text='read_more' page={props.link} generalSiteProps={props}></LinkComponent>}
         </div>

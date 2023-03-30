@@ -10,12 +10,17 @@ import carpet from '../public/carpet.jpeg'
 import bitbit from '../public/bitbit.jpg'
 import menifa from '../public/menifa.jpg'
 import gong from '../public/gong.jpg'
+import crash from '../public/crash.jpeg'
 import YoutubeVideoPlayer from 'components/youtube_player/youtube.player';
-import PressCardMobile from 'components/press_card/press_card.mobile.';
+import PressCardMobile from 'components/press_card/press_card.mobile';
+import Image from 'next/image'
+import CustomImage from 'components/image/image';
 
 const Concerts: FC<GeneralSiteProps> = (props) => {
   return (
    <div >
+     <CustomImage img={crash} generalSiteProps={props} ></CustomImage>
+       <HomeCardMobile description='concerts_page_Desc' generalSiteProps={props} title='concerts'></HomeCardMobile>
        <HomeCardMobile description='the_show_desc' generalSiteProps={props} img={teva_cellcom} title='the_show_title'></HomeCardMobile>
        <HomeCardMobile description='kelim_shluvim_desc' generalSiteProps={props} img={trio} title='kelim_shluvim_title'></HomeCardMobile>
        <HomeCardMobile description='drums_desc' generalSiteProps={props} img={carpet} title='drums_title'></HomeCardMobile>
