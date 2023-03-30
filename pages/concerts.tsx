@@ -20,7 +20,7 @@ const Concerts: FC<GeneralSiteProps> = (props) => {
   return (
    <div >
      <CustomImage img={crash} generalSiteProps={props} ></CustomImage>
-       <HomeCardMobile description='concerts_page_Desc' generalSiteProps={props} title='concerts'></HomeCardMobile>
+       <HomeCardMobile description='concerts_page_desc' generalSiteProps={props} title='concerts'></HomeCardMobile>
        <HomeCardMobile description='the_show_desc' generalSiteProps={props} img={teva_cellcom} title='the_show_title'></HomeCardMobile>
        <HomeCardMobile description='kelim_shluvim_desc' generalSiteProps={props} img={trio} title='kelim_shluvim_title'></HomeCardMobile>
        <HomeCardMobile description='drums_desc' generalSiteProps={props} img={carpet} title='drums_title'></HomeCardMobile>
