@@ -11,6 +11,7 @@ import bitbit from '../public/bitbit.jpg'
 import menifa from '../public/menifa.jpg'
 import gong from '../public/gong.jpg'
 import YoutubeVideoPlayer from 'components/youtube_player/youtube.player';
+import PressCardMobile from 'components/press_card/press_card.mobile.';
 
 const Concerts: FC<GeneralSiteProps> = (props) => {
   return (
@@ -22,6 +23,9 @@ const Concerts: FC<GeneralSiteProps> = (props) => {
        <HomeCardMobile description='drumdance_desc' generalSiteProps={props} img={menifa} title='drumdance_title'></HomeCardMobile>
        <HomeCardMobile description='magic_desc' generalSiteProps={props} img={gong} title='magic_title'></HomeCardMobile>
        <YoutubeVideoPlayer id={'9iyh6SF7wfY'} playing={false} />
+       <PressCardMobile generalSiteProps={props} reviewer='slonim' review='slonim_rev'></PressCardMobile>
+       <PressCardMobile generalSiteProps={props} reviewer='slonim' review='slonim_rev_2'></PressCardMobile>
+       <PressCardMobile generalSiteProps={props} reviewer='shomroni' review='shomromi_rev'></PressCardMobile>
 
    </div>
   )
