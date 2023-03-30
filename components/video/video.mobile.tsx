@@ -21,7 +21,7 @@ import styles from "./video.mobile.module.css";
 // import { div, Center, Heading, SimpleGrid } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/button';
 import Head from "next/head"
-import YoutubeVideoPlayer from "./youtube.player";
+import YoutubeVideoPlayer from "../youtube_player/youtube.player";
 const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };

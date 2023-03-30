@@ -10,7 +10,7 @@ export type HomeCardMobileProps = {
     img:StaticImageData;
     title:string;
     description:string;
-    link:string;
+    link?:string;
 };
 const HomeCardMobile: FC<HomeCardMobileProps> = (props) => {
     const { t } = useTranslation('common')
@@ -19,6 +19,9 @@ const HomeCardMobile: FC<HomeCardMobileProps> = (props) => {
         // <div className={styles.main}>
         <div className={styles['home-card-mobile-wrap']}>
              {t(props.title)}
+             <div>
+            {t(props.description)}
+            </div>
             <div className={styles['image-wrap']}>
                 <Image
                     alt="Mountains"
@@ -26,10 +29,8 @@ const HomeCardMobile: FC<HomeCardMobileProps> = (props) => {
                     fill
                 />
             </div>
-            <div>
-            {t(props.description)}
-            </div>
-            <LinkComponent text='read_more' page={props.link} generalSiteProps={props}></LinkComponent>
+           
+           { props.link &&  <LinkComponent text='read_more' page={props.link} generalSiteProps={props}></LinkComponent>}
         </div>
 
 
