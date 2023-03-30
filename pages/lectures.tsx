@@ -20,7 +20,7 @@ const Lectures: FC<GeneralSiteProps> = (props) => {
     <>
          <CustomImage img={crash} generalSiteProps={props} ></CustomImage>
 
-           <HomeCardMobile description='lectures_page_desc' generalSiteProps={props} title='concerts'></HomeCardMobile>
+           <HomeCardMobile description='lectures_page_desc' generalSiteProps={props} title='lectures'></HomeCardMobile>
            <HomeCardMobile description='pace_desc' generalSiteProps={props} title='pace_title' img={pace}></HomeCardMobile>
            <HomeCardMobile description='artbuis_desc' generalSiteProps={props} title='artbuis_title' img={blue}></HomeCardMobile>
            <HomeCardMobile description='perc_desc' generalSiteProps={props} title='perc_title' img={bal}></HomeCardMobile>

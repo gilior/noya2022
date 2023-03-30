@@ -6,6 +6,11 @@ import Navbar from '../components/navbar'
 import { GeneralSiteProps } from '../const'
 import Concerts from './concerts';
 import { useRouter } from 'next/router'
+import CustomImage from 'components/image/image'
+import HomeCardMobile from 'components/home_card/home.card'
+import bongo from 'public/bongo.jpg'
+import smile from 'public/smile.jpg'
+import darbuka from 'public/darbuka.jpg'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +20,11 @@ const Workshops: FC<GeneralSiteProps> = (props) => {
   
   return (
     <>
-      <h1>Workshops page</h1>
+             <CustomImage img={bongo} generalSiteProps={props} ></CustomImage>
+           <HomeCardMobile description='workshops_desc' generalSiteProps={props} title='workshops'></HomeCardMobile>
+           <HomeCardMobile description='percwork_desc' generalSiteProps={props} img={smile} title='percwork_title'></HomeCardMobile>
+           <HomeCardMobile description='rythm_desc' generalSiteProps={props} img={darbuka} title='rythm_title'></HomeCardMobile>
+
     </>
   )
 }
