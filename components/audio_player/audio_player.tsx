@@ -1,23 +1,29 @@
-// import Player from "@madzadev/audio-player";
-// import "@madzadev/audio-player/dist/index.css";
-// import { GeneralSiteProps } from "const";
+import AudioPlayer from 'react-h5-audio-player';
+import 'react-h5-audio-player/lib/styles.css';
 import { FC } from "react";
+import CustomAudioPlayerHeader from './audio_header';
 
 export type Track = {
     url: string,
     title: string,
-    tags: Array<string>,
+    subTitle?: string,
 }
 export type AudioPlayerProps = {
-    tracks: Array<Track>
+    track: Track
 
 }
-const AudioPlayer: FC<AudioPlayerProps> = (props) => {
+const CustomAudioPlayer: FC<AudioPlayerProps> = (props) => {
+
     return (
         <div>
-            {/* <Player trackList={props.tracks} /> */}
+           <AudioPlayer
+           header={<CustomAudioPlayerHeader title={props.track.title} subTitle={props.track.subTitle}></CustomAudioPlayerHeader>}
+    src={props.track.url}
+    onPlay={e => console.log("onPlay")}
+    // other props here
+  />
         </div>
     )
 }
 
-export default AudioPlayer;
+export default CustomAudioPlayer;
