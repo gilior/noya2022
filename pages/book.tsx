@@ -15,6 +15,7 @@ import blackwhite from 'public/blackwhite.png'
 import VideoWithImage from 'components/video_with_image/video_with_image'
 import AudioPlayer from '@/components/audio_player/audio_player'
 import CustomAudioPlayer from 'components/audio_player/audio_player'
+import PressCardMobile from 'components/press_card/press_card.mobile'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -41,6 +42,20 @@ const Book: FC<GeneralSiteProps> = (props) => {
            <VideoWithImage generalSiteProps={props} img={sitting} videoId='75KPnL4Na5s'></VideoWithImage>
            </HomeCardMobile>
            <HomeCardMobile generalSiteProps={props} description='to_order'></HomeCardMobile>
+           <PressCardMobile generalSiteProps={props} reviewer='yalechi' review='yalechi_rev'></PressCardMobile>
+           <PressCardMobile generalSiteProps={props} reviewer='inbar' review='inbar_rev'></PressCardMobile>
+           <PressCardMobile generalSiteProps={props} reviewer='ilana' review='ilana_rev'></PressCardMobile>
+           <PressCardMobile generalSiteProps={props} reviewer='sigi' review='sigi_rev'></PressCardMobile>
+           <PressCardMobile generalSiteProps={props} reviewer='gold' review='gold_rev'></PressCardMobile>
+           <PressCardMobile generalSiteProps={props} reviewer='tagar' review='tagar_rev'></PressCardMobile>
+           <PressCardMobile generalSiteProps={props} reviewer='broch' review='broch_rev'></PressCardMobile>
+           <PressCardMobile generalSiteProps={props} reviewer='shfi' review='shfi_rev'></PressCardMobile>
+           <PressCardMobile generalSiteProps={props} reviewer='begen' review='begen_rev'></PressCardMobile>
+           <PressCardMobile generalSiteProps={props} reviewer='rozil' review='rozil_rev'></PressCardMobile>
+           <PressCardMobile generalSiteProps={props} reviewer='loved' review='loved_rev'></PressCardMobile>
+           <HomeCardMobile generalSiteProps={props} description='place_order'></HomeCardMobile>
+
+
 
 
 
