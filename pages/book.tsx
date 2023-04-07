@@ -54,11 +54,6 @@ const Book: FC<GeneralSiteProps> = (props) => {
            <PressCardMobile generalSiteProps={props} reviewer='rozil' review='rozil_rev'></PressCardMobile>
            <PressCardMobile generalSiteProps={props} reviewer='loved' review='loved_rev'></PressCardMobile>
            <HomeCardMobile generalSiteProps={props} description='place_order'></HomeCardMobile>
-
-
-
-
-
     </>
   )
 }

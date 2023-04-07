@@ -19,7 +19,8 @@ import Bio from './bio'
 import News from './news'
 import MenuPanel from '../components/menuPanel'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-
+import UAParser from 'ua-parser-js';
+import useDeviceType from 'hooks/useDeviceType'
 const inter = Inter({ subsets: ['latin'] })
 
 const Index: FC<GeneralSiteProps> = (props) => {
@@ -38,14 +39,15 @@ const Index: FC<GeneralSiteProps> = (props) => {
     ['bio', Bio],
     ['news', News],
   ]);
-  const router = useRouter()
+  const router = useRouter();
+  const deviceType=useDeviceType();
   const Com = pagesMap.get(router.query.page?.toString() || 'home');
   return (
     <>
 
-      <MenuPanel {...props}></MenuPanel>
+      <MenuPanel {...props} {...props} isMobile={deviceType=='mobile'}></MenuPanel>
       <Layout>
-        <Com {...props}></Com>
+        <Com {...props} isMobile={deviceType=='mobile'}></Com>
 
 
       </Layout>
@@ -80,6 +82,13 @@ export const getStaticProps: GetStaticProps<GeneralSiteProps> = async ({
   const data = await res.json();
 
   console.log(data);
+  // const userAgent = typeof window !== 'undefined'  ? navigator.userAgent : '';
+  // const parser = new UAParser();
+  // const parsedUA = parser.setUA(userAgent).getResult();
+  // const isMobile = parsedUA.device?.type === 'mobile';
+  // const isTablet = parsedUA.device?.type === 'tablet';
+  // const isPortrait = typeof window !== 'undefined'  && window.matchMedia('(orientation: portrait)').matches;
+
 
   return {
     props: {
@@ -89,7 +98,7 @@ export const getStaticProps: GetStaticProps<GeneralSiteProps> = async ({
       locale,
       locales,
       menuItems: generalSiteProps.menuItems,
-      youtubeObj:data
+      youtubeObj:data,
     },
   }
   // }

@@ -41,7 +41,7 @@ const HomeCardMobile: FC<HomeCardMobileProps> = (props) => {
                 />
             </div>}
            
-           { props.link &&  <LinkComponent text='read_more' page={props.link} generalSiteProps={props}></LinkComponent>}
+           { props.link &&  <LinkComponent text='read_more' page={props.link} generalSiteProps={props.generalSiteProps}></LinkComponent>}
 
            {props.children}
         </div>

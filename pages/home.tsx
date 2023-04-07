@@ -24,12 +24,14 @@ const inter = Inter({ subsets: ['latin'] })
 
 const Home: FC<GeneralSiteProps> = (props) => {
 
+console.log(props);
 
   
   return (
     <> 
-     <HomeMobile></HomeMobile>
-   <IntroMobile {...props}></IntroMobile>
+     {props.isMobile && <HomeMobile {...props} ></HomeMobile>}
+     {!props.isMobile && <h1>desktop</h1>}
+   {/* <IntroMobile {...props}></IntroMobile>
    <LittleGirlMobile {...props}></LittleGirlMobile>
    <VideoMobile  {...props}></VideoMobile>
    <AudioMobile  {...props}></AudioMobile>
@@ -37,7 +39,7 @@ const Home: FC<GeneralSiteProps> = (props) => {
    <HomeCardMobile description='home_lectures' generalSiteProps={props} img={lecture} link='lectures' title='lectures'></HomeCardMobile>
    <HomeCardMobile description='home_workshops' generalSiteProps={props} img={workshops} link='workshops' title='workshops'></HomeCardMobile>
    <HomeCardMobile description='home_book' generalSiteProps={props} img={book} link='book' title='book'></HomeCardMobile>
-   <ContactMobile {...props}></ContactMobile>
+   <ContactMobile {...props}></ContactMobile> */}
     </>
  
   )

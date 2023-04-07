@@ -16,6 +16,7 @@ export interface GeneralSiteProps {
     title?: string;
     pageName?: string;
     youtubeObj?: YoutubeObj;
+    isMobile?:boolean
 }
 
 export interface Fallback {
