@@ -15,34 +15,15 @@ import YoutubeVideoPlayer from 'components/youtube_player/youtube.player';
 import PressCardMobile from 'components/press_card/press_card.mobile';
 import Image from 'next/image'
 import CustomImage from 'components/image/image';
+import ConcertsPageMobile from '@/components/pages/concert/concerts.mobile';
 
 const Concerts: FC<GeneralSiteProps> = (props) => {
   return (
-   <div >
-     <CustomImage img={crash} generalSiteProps={props} ></CustomImage>
-       <HomeCardMobile description='concerts_page_desc' generalSiteProps={props} title='concerts'></HomeCardMobile>
-       <HomeCardMobile description='the_show_desc' generalSiteProps={props} img={teva_cellcom} title='the_show_title'></HomeCardMobile>
-       <HomeCardMobile description='kelim_shluvim_desc' generalSiteProps={props} img={trio} title='kelim_shluvim_title'></HomeCardMobile>
-       <HomeCardMobile description='drums_desc' generalSiteProps={props} img={carpet} title='drums_title'></HomeCardMobile>
-       <HomeCardMobile description='bit_desc' generalSiteProps={props} img={bitbit} title='bit_title'></HomeCardMobile>
-       <HomeCardMobile description='drumdance_desc' generalSiteProps={props} img={menifa} title='drumdance_title'></HomeCardMobile>
-       <HomeCardMobile description='magic_desc' generalSiteProps={props} img={gong} title='magic_title'></HomeCardMobile>
-       <YoutubeVideoPlayer id={'9iyh6SF7wfY'} playing={false} />
-       <PressCardMobile generalSiteProps={props} reviewer='slonim' review='slonim_rev'></PressCardMobile>
-       <PressCardMobile generalSiteProps={props} reviewer='slonim' review='slonim_rev_2'></PressCardMobile>
-       <PressCardMobile generalSiteProps={props} reviewer='shomroni' review='shomromi_rev'></PressCardMobile>
-
-   </div>
+    <> 
+     {props.isMobile && <ConcertsPageMobile {...props} ></ConcertsPageMobile>}
+     {!props.isMobile && <h1>desktop  Concerts</h1>}
+    </>
+ 
   )
 };
-
-export  const getStaticProps: GetStaticProps<{}> = async ({
-  locale,
-  locales,
-}) => {
-  return {
-    props: {}, // will be passed to the page component as props
-  }
-}
-
 export default Concerts;

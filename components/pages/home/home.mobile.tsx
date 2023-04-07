@@ -1,24 +1,19 @@
 import React, { FC } from 'react';
 import Image from 'next/image'
-import styles from 'components/home/home.mobile.module.css'
-import mic from '../../public/1.jpg'
-import { Inter } from '@next/font/google'
-import { GetStaticProps } from 'next'
+import styles from 'components/pages/home/home.mobile.module.css'
+import mic from 'public/1.jpg'
 import { GeneralSiteProps } from 'const'
-import { useRouter } from 'next/router'
 import IntroMobile from 'components/intro/into.mobile'
 import LittleGirlMobile from 'components/littleGirl/littleGirl.mobile'
 import VideoMobile from 'components/video/video.mobile'
 import AudioMobile from 'components/audio/audio.mobile'
-import ConcertsMobile from 'components/concerts/concerts.mobile'
-import LecturesMobile from 'components/lectures/lectures.mobile'
 import lecture from 'public/lecture.jpeg'
 import crash from 'public/crash.jpeg'
 import book from 'public/book.jpg'
 import workshops from 'public/workshops.jpg'
 import HomeCardMobile from 'components/home_card/home.card'
 import ContactMobile from 'components/contact/contact.mobile'
-const HomeMobile: FC<GeneralSiteProps> = (props) => {
+const HomePageMobile: FC<GeneralSiteProps> = (props) => {
   return (
     // <div className={styles.main}>
     <>
@@ -47,4 +42,4 @@ const HomeMobile: FC<GeneralSiteProps> = (props) => {
   )
 };
 
-export default HomeMobile;
+export default HomePageMobile;
