@@ -22,9 +22,13 @@ const HomeCardMobile: FC<HomeCardMobileProps> = (props) => {
         // <div className={styles.main}>
         <div className={styles['home-card-mobile-wrap']}>
              {props.title && t(props.title)}
-             <div>
-            {props.description && t(props.description)}
-            </div>
+            {props.description
+             &&
+             <div dangerouslySetInnerHTML={{ __html: t(props.description, { 
+                // Note the use of the span tag to style the bold text with CSS
+                postProcess: 'html', interpolation: { escapeValue: false } 
+              }) }} />
+            }
           { props.img && <div className={styles['image-wrap']}>
                 <Image
                     alt="Mountains"
