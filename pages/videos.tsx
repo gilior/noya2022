@@ -6,6 +6,7 @@ import Navbar from '../components/navbar'
 import { GeneralSiteProps } from '../const'
 import Concerts from './concerts';
 import { useRouter } from 'next/router'
+import VideoPageMobile from 'components/pages/video/video'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,8 +15,9 @@ const Videos: FC<GeneralSiteProps> = (props) => {
 
   
   return (
-    <>
-      <h1>Videos page</h1>
+    <> 
+     {props.isMobile && <VideoPageMobile {...props} ></VideoPageMobile>}
+     {!props.isMobile && <h1>desktop  Videos</h1>}
     </>
   )
 }
