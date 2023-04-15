@@ -6,6 +6,7 @@ import Navbar from '../components/navbar'
 import { GeneralSiteProps } from '../const'
 import Concerts from './concerts';
 import { useRouter } from 'next/router'
+import GalleryPageMobile from 'components/pages/gallery/gallery.mobile'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,9 +15,11 @@ const Gallery: FC<GeneralSiteProps> = (props) => {
 
   
   return (
-    <>
-      <h1>Gallery page</h1>
+    <> 
+     {props.isMobile && <GalleryPageMobile {...props} ></GalleryPageMobile>}
+     {!props.isMobile && <h1>desktop</h1>}
     </>
+ 
   )
 }
 
