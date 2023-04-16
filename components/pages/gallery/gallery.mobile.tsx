@@ -115,9 +115,7 @@ const GalleryPageMobile: FC<GeneralSiteProps> = (props) => {
 
   
   return (
-  <HomeCardMobile generalSiteProps={props}>
     <Carousel generalSiteProps={props} images={[d,e,f,g,h,i,j,k,l,m,n,o,o,p,q,r,s,t,u,v,w,x,y,z,aa,bb,cc,dd,ee,ff,gg,hh,ii,jj,kk,ll,mm,nn,oo,pp,qq,rr,ss,tt,uu,vv,xx,yy,zz,aaa,bbb,ccc,ddd,eee,fff,ggg,hhh,iii,jjj,kkk,lll,mmm,ooo,ppp,qqq,rrr,sss,ttt,uuu,vvv,www,xxx,yyy,zzz,aaaa,bbbb,cccc,dddd,eeee,ffff,gggg,hhhh,iiii,jjjj,kkkk,llll,mmmm,nnnn,oooo,pppp,qqqq,rrrr,ssss,tttt,uuuu,vvvv,wwww,xxxx,yyyy,ddddd]}></Carousel>
-  </HomeCardMobile>
   )
 }
 export default GalleryPageMobile;
